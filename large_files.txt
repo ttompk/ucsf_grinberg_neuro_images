@@ -1,0 +1,15 @@
+170498071 early_development/data/cifar-10-python.tar.gz
+31035999 early_development/data/cifar-10-batches-py/data_batch_3
+31035999 early_development/cifar-10/data_batch_3
+31035704 early_development/data/cifar-10-batches-py/data_batch_1
+31035704 early_development/cifar-10/data_batch_1
+31035696 early_development/data/cifar-10-batches-py/data_batch_4
+31035696 early_development/cifar-10/data_batch_4
+31035623 early_development/data/cifar-10-batches-py/data_batch_5
+31035623 early_development/cifar-10/data_batch_5
+31035526 early_development/data/cifar-10-batches-py/test_batch
+31035526 early_development/cifar-10/test_batch
+31035320 early_development/data/cifar-10-batches-py/data_batch_2
+31035320 early_development/cifar-10/data_batch_2
+1900325 ref/alegro cell detection classification.pdf
+1900325 alegro cell detection classification.pdf

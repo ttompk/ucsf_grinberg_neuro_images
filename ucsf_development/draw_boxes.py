@@ -10,7 +10,7 @@ Se overview here:  https://medium.com/datadriveninvestor/the-tool-that-will-help
 
 To proceed to the next image, press right arrow key, and vice versa to return to the previous image press the left arrow key.
 
-The locations are saved in a file called box.csv.  The first column is the image file name, second is x_min, third is y_min, the next to it is x_max and the last is y_max. 
+The locations are saved in a new csv file.  The first column is the image file name, second is x_min, third is y_min, the next to it is x_max and the last is y_max. 
 
 '''
 
@@ -34,7 +34,6 @@ except NameError:
 
 
 #setting
-datasave = 'box.csv'
 #dirimg = 'image/wombat'    # original code. Made interactive because wtfn?
 dirt = input("What's the name of the folder with images yo? (example: cwd/dir): ")
 dirimg = os.getcwd() + '/' + dirt
@@ -43,21 +42,38 @@ firstimg = dirimg + '/' + sorted(os.listdir(dirimg))[0]
 wimg, himg = Image.open(firstimg).size
 
 # if image is too big then resize
+print("Original image size: {}, {}".format(wimg, himg))
 resize_q = input('Resize images (y/n)?: ')
 if resize_q == 'y' or resize_q == 'Y':
     percent_scale = int(input('What % scale to resize to (0-100)?: '))
-    
+else:
+    percent_scale = 100
+
+# saving the coordinates to a file
 print('---')
-print('To save bounding boxes press "s". ')
-wCanvas = 1366  # orignal code
-hCanvas = 700  # original code
+datasave = ""
+while datasave == "":
+    datasave = input("Name of the coordinates file (ex. 'this.csv'): ")
+
+print('---')
+print('To end the project and save bounding boxes press "s". ')
+
+# set TK canvas size
+wCanvas = 3000  
+hCanvas = 1500 
 
 
 class BoundingBox(tk.Tk):
+    '''
+    needs a definition
+    '''
+    
     def __init__(self):
         tk.Tk.__init__(self)
         self.x = 0
         self.y = 0
+        self.scale_factor = percent_scale*0.01
+        
         self.canvas = tk.Canvas(self, width=wCanvas, height=hCanvas, cursor="cross")
         self.canvas.pack(side="top", fill="both", expand=True)
         self.canvas.config(scrollregion=self.canvas.bbox(tk.ALL))
@@ -93,17 +109,25 @@ class BoundingBox(tk.Tk):
         image = Image.open(dirimg+'/'+self.allimg[self.imgptr])
         if resize_q == 'y' or resize_q == 'Y':
             wimg, himg = image.size
-            image = image.resize((int(percent_scale*0.01*int(wimg)),
-                                  int(percent_scale*0.01*int(himg))), 
-                                 Image.ANTIALIAS) ## (height, width)
+            image = image.resize((int(self.scale_factor*wimg),
+                                  int(self.scale_factor*himg)), 
+                                 Image.ANTIALIAS) ## (width, height)
         self.im = image
-        #self.im = Image.open(dirimg+'/'+self.allimg[self.imgptr])
         self.tk_im = ImageTk.PhotoImage(self.im)
         self.canvas.create_image(0,0,anchor="nw",image=self.tk_im)
 
     def saveboxcord(self, event):
         self.boxdata = open(datasave, 'a+')
+        self.boxdata.write("file_name" + "," +
+                           "xmin" + "," +
+                           "ymin" + "," +
+                           "xmax" + "," +
+                           "ymax" + "," + 
+                           "tot_width" + "," +
+                           "tot_height" +'\n')
         for i in xrange(len(self.allcord)):
+            '''
+            # this is older code prior to scaling
             self.boxdata.write(self.allimg[self.imgptr]+','+ 
                                str(self.allcord[i][0])+','+
                                str(self.allcord[i][1])+','+
@@ -111,6 +135,15 @@ class BoundingBox(tk.Tk):
                                str(self.allcord[i][3])+','+
                                str(self.allcord[i][4])+','+
                                str(self.allcord[i][5])+'\n')
+            '''
+            # new code to include scaling
+            self.boxdata.write(self.allimg[self.imgptr]+','+ 
+                               str(int(self.allcord[i][0] / self.scale_factor))+','+
+                               str(int(self.allcord[i][1] / self.scale_factor))+','+
+                               str(int(self.allcord[i][2] / self.scale_factor))+','+
+                               str(int(self.allcord[i][3] / self.scale_factor))+','+
+                               str(int(self.allcord[i][4] / self.scale_factor))+','+
+                               str(int(self.allcord[i][5] / self.scale_factor))+'\n')
         for i in xrange(len(self.allrect)):
             self.canvas.delete(self.allrect[i])
         del self.allcord[:]
@@ -173,7 +206,6 @@ class BoundingBox(tk.Tk):
 
 		# expand rectangle as you drag the mouse
         self.canvas.coords(self.rect, self.start_x, self.start_y, curX, curY)
-
 
 
     def on_button_release(self, event):

@@ -3,18 +3,23 @@
 # Parses images from a txt file of bounding boxes within an image
 # Code from here: https://github.com/kbardool/keras-frcnn/blob/master/keras_frcnn/simple_parser.py
 
+# requires text file of the location of each of the bounded boxes
+# text file format: filename, xmin, ymin, xmax, ymax, class_name
+
 import cv2
 import numpy as np
 
 def get_data(input_path):
-	found_bg = False
-	all_imgs = {}
-
-	classes_count = {}
-
-	class_mapping = {}
-
-	visualise = True
+	#
+    found_bg = False
+	#
+    all_imgs = {}
+	#
+    classes_count = {}
+	#
+    class_mapping = {}
+	#
+    visualise = True 
 	
 	with open(input_path,'r') as f:
 

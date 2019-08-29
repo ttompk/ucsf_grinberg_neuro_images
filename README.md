@@ -8,4 +8,4 @@ Three work folders:
 3. ucsf_production: implementation of the model into ImageJ, an open-source microscope inspection platform built by the NIH. 
 
 Update 08/27/2019:
-Project is in early development. Awaiting ground truth from Grinberg lab.
+Project is in early development. Model backbone selection phase. Awaiting ground truth from Grinberg lab.

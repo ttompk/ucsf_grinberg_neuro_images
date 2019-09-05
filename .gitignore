@@ -4,6 +4,8 @@ early_development/data/
 ref/
 .DS_Store
 data_science/
+.ipynb_checkpoints/
+
 
 ucsf_development/img/
 ucsf_development/img_boxes

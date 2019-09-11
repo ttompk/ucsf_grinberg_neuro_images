@@ -6,7 +6,7 @@ This directory uses data from the Grinberg lab.
 
 ## Manually labeling cell bodies.
 
-Use GIMP to create a map for identifying red, green, and multi colored cells.
+Use GIMP to create a map for identifying red, green, and multi colored cells. The GIMP process is generic and can be applied to any number of classes. Repeat the GIMP process if more than one mask layer.
 
 ### GIMP Process
 

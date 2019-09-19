@@ -3,16 +3,22 @@
 
 repo name: ucsf_gringberg_neuro_images
 
-This project was created to build a tool to identify human flourescense-labeled neurons in microscopy slides. 
+This project was created to build a tool to identify human flourescense-labeled neurons in tissue microarrays.  
 
 Ground truth data for this project was provided by the Grinberg Lab at UCSF and consisted of 200+ human expertly-labeled images for model training and validation.
 
+![neuron_slide](U-net.png)
+[A view of a microscopy image]
 
 ## Repo Overview
 The project is divided into 3 folders for development work. The last folder 'ucsf_production' will host the final code at completion.
 
 The goal of this project is to perform segmentation analysis on immunoflourescently labeled neurons on tissue microarrays. The project is in collaboration with the Grinberg Lab at UCSF. 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> c40898809b8212feb8f8378750f0c469a4434562
 Project Phases
 1. NeuN-stained neuron segmentation
 2. Colocalization of neurons with other markers
@@ -23,7 +29,7 @@ Project Phases
 Python
 Fast.ai library
 U-Net model architecture
-![U-Net](U-net.png)
+![U-Net](U-net.png)  
 [image source](https://arxiv.org/pdf/1505.04597.pdf)
 
 

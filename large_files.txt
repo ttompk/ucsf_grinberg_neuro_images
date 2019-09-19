@@ -1,15 +1,12 @@
-170498071 early_development/data/cifar-10-python.tar.gz
-31035999 early_development/data/cifar-10-batches-py/data_batch_3
-31035999 early_development/cifar-10/data_batch_3
-31035704 early_development/data/cifar-10-batches-py/data_batch_1
-31035704 early_development/cifar-10/data_batch_1
-31035696 early_development/data/cifar-10-batches-py/data_batch_4
-31035696 early_development/cifar-10/data_batch_4
-31035623 early_development/data/cifar-10-batches-py/data_batch_5
-31035623 early_development/cifar-10/data_batch_5
-31035526 early_development/data/cifar-10-batches-py/test_batch
-31035526 early_development/cifar-10/test_batch
-31035320 early_development/data/cifar-10-batches-py/data_batch_2
-31035320 early_development/cifar-10/data_batch_2
-1900325 ref/alegro cell detection classification.pdf
-1900325 alegro cell detection classification.pdf
+136986877 img/TrainingData_1_original.tif
+5903114 img/TrainingData_1_original_tiny.png
+5270096 troy_tutorial/lesson7-superres-gan.ipynb
+4136625 troy_tutorial/lesson7-superres-imagenet.ipynb
+2731420 troy_tutorial/lesson7-superres.ipynb
+2125685 troy_tutorial/lesson6-pets-more.ipynb
+1953136 troy_tutorial/lesson3-camvid.ipynb
+1690420 troy_tutorial/lesson2-sgd.ipynb
+1329935 troy_tutorial/lesson1-pets.ipynb
+1171116 troy_tutorial/lesson7-wgan.ipynb
+1077118 troy_tutorial/lesson3-camvid-tiramisu.ipynb
+1039185 troy_tutorial/lesson3-head-pose.ipynb

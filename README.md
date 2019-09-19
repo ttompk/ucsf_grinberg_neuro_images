@@ -25,7 +25,7 @@ Project Phases
 Python
 Fast.ai library
 U-Net model architecture
-![U-Net](U-net.png)  
+![U-Net](img/U-net.png)  
 [image source](https://arxiv.org/pdf/1505.04597.pdf)
 
 

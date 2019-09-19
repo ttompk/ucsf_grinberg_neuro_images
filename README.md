@@ -3,10 +3,12 @@
 
 repo name: ucsf_gringberg_neuro_images
 
-This project was created to build a tool to identify human flourescense-labeled neurons in microscopy slides. 
+This project was created to build a tool to identify human flourescense-labeled neurons in tissue microarrays.  
 
 Ground truth data for this project was provided by the Grinberg Lab at UCSF and consisted of 200+ human expertly-labeled images for model training and validation.
 
+![neuron_slide](U-net.png)
+[A view of a microscopy image]
 
 ## Repo Overview
 The project is divided into 3 folders for development work. The last folder 'ucsf_production' will host the final code at completion.
@@ -24,7 +26,7 @@ Project Phases
 Python
 Fast.ai library
 U-Net model architecture
-![U-Net](U-net.png)
+![U-Net](U-net.png)  
 [image source](https://arxiv.org/pdf/1505.04597.pdf)
 
 

@@ -8,7 +8,7 @@ This project was created to build a tool to identify immunofluorescence-labeled 
 Ground truth data for this project was provided by the Grinberg Lab at UCSF and consisted of 200+ human expertly-labeled images for model training and validation.
 
 ![neuron_slide](img/TrainingData_1_original_tiny.png)
-[A view of a microscopy image]
+[NeuN stained human tissue microarray - training image example]
 
 ## Repo Overview
 The project is divided into 3 folders for development work. The last folder 'ucsf_production' will host the final code at completion.

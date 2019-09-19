@@ -3,11 +3,11 @@
 
 repo name: ucsf_gringberg_neuro_images
 
-This project was created to build a tool to identify human flourescense-labeled neurons in tissue microarrays.  
+This project was created to build a tool to identify immunofluorescence-labeled human neurons in tissue microarrays.  
 
 Ground truth data for this project was provided by the Grinberg Lab at UCSF and consisted of 200+ human expertly-labeled images for model training and validation.
 
-![neuron_slide](U-net.png)
+![neuron_slide](img/TrainingData_1_original_tiny.png)
 [A view of a microscopy image]
 
 ## Repo Overview

@@ -1,5 +1,6 @@
 # ucsf ignore files
 
+# ignore training image files
 early_development/data/
 ref/
 .DS_Store

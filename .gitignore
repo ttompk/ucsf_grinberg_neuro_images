@@ -9,9 +9,12 @@ data_science/
 
 troy_tutorial/.ipynb_checkpoints/
 
+# ignore in the ucsf development folder
 ucsf_development/img/
 ucsf_development/img_boxes
 ucsf_development/.DS_Store
 ucsf_development/.ipynb_checkpoints
+ucsf_development/data
+
 early_development/.ipynb_checkpoints
 

@@ -15,6 +15,7 @@ ucsf_development/img_boxes
 ucsf_development/.DS_Store
 ucsf_development/.ipynb_checkpoints
 ucsf_development/data
+ucsf_development/src/__pycache__/img_functions.cpython-37.pyc
 
 early_development/.ipynb_checkpoints
 

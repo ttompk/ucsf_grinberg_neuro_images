@@ -1,3 +1,6 @@
+import numpy as np
+from fastai.vision import open_mask, open_image
+
 # Display images
 from IPython.display import Image, display
 import PIL.Image
@@ -46,6 +49,39 @@ def _file_aux(img_file_list):
     return stop
 
 
+
+def label_info(img_names, lbl_names, get_y_fn=None):
+    # Display an example mask using fastai function
+    # open_mask is used for segmentation labels because label data are integers, not floats
+    n_img = len(img_names)
+    if n_img > 3:
+        stop = 3
+    else:
+        stop = n_img
+    print("There are {} images in the folder.".format(n_img))
+    print("First {} image files:".format(stop))
+    color_classes = set()
+    for i in range(stop):
+        train = open_image(img_names[i])
+        mask = open_mask(get_y_fn(img_names[i]))   
+        c_classes = np.unique(mask.data)
+        color_classes.update(c_classes)
+        print("---------------------")
+        print(i)
+        print("Name: {}".format(img_names[i]))    # training image file name
+        print("Size: Train - {} \tMask - {}".format(np.array(train.shape[1:3]), 
+                                                    np.array(mask.shape[1:3])))
+        print("Unique Color Classes:{}".format(c_classes))
+        print(mask.data)
+        mask.show(figsize=(5, 5), alpha=1)
+    print("---------------------")
+    print("Total number of segementation classes: {}".format(len(color_classes)))
+    print("Classes: {}".format(color_classes))
+    print("---------------------")
+    print("Note: default color for display is blue in fastai.")
+
+
+
 # convert rgb image to greyscale
 # --- not complete, don't use ---
 def image_to_single_channel(path_folder, new_dir_name):
@@ -83,3 +119,21 @@ def img_window(img_name):
     '''
     im = PIL.Image.open(img_name)
     im.show()
+
+    
+def save_img_greyscale(fpath, fname, save_dir):
+    # converts image to grey scale and saves to a folder
+    # only to be run once
+    # input: fpath, fname, save_dir  ->  all strings
+    img = pil_image.open(fpath+'/'+fname).convert('L') # 'L' = 8-bit pixels, black and white
+    print(img.size)
+    print(img.mode)
+    img.save(save_dir+'/'+fname)
+
+'''
+# image display functions in PIL
+# ---
+pil_image.open(fname)  # path and filename...verify
+img = PIL.Image.open(fname)  # single file - assigned to PIL image object (PIL.Image.Image), can be manipulated with other PIL functions
+
+'''

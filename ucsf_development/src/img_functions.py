@@ -1,5 +1,6 @@
 import numpy as np
 from fastai.vision import open_mask, open_image
+import math
 
 # Display images
 from IPython.display import Image, display
@@ -119,6 +120,23 @@ def img_window(img_name):
     '''
     im = PIL.Image.open(img_name)
     im.show()
+
+
+def img_slicer(save_dir, path_img):
+    '''docs here
+    depend: import math
+    '''
+    for img_file in get_image_files(path_img):
+        img = pil_image.open(img_file)
+        width_interval = math.floor(img.width/300)
+        height_interval = math.floor(img.height/300)
+        for width in range(width_interval):
+            for height in range(height_interval):
+                box = width*300,height*300,(width+1)*300,(height+1)*300
+                region = img.crop(box)
+                # 300-300-TrainingData_1_original.tif
+                fname = "{}-{}-{}".format(width*300, height*300,img_file.parts[-1]) # change to dynamic
+                region.save(save_dir+fname)
 
     
 def save_img_greyscale(fpath, fname, save_dir):

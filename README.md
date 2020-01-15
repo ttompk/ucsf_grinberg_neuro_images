@@ -5,7 +5,7 @@ repo name: ucsf_gringberg_neuro_images
 
 This project was created to build a tool to identify immunofluorescence-labeled human neurons in tissue microarrays.  
 
-Ground truth data for this project was provided by the Grinberg Lab at UCSF and consisted of 200+ human expertly-labeled images for model training and validation.
+Ground truth data for this project was provided by the Grinberg Lab at UCSF and consisted of 9 human expertly-labeled images for model training and validation.
 
 ![neuron_slide](img/TrainingData_1_original_tiny.png)
 [NeuN stained human tissue microarray - training image example]
@@ -22,8 +22,13 @@ Project Phases
 
 
 ## Phase 1 - Segmentation
-Python
-Fast.ai library
+#### Ground Truth
+Ground truth for this project consisted of images of ...  
+Human tissue samples were collected as noted here: __insert reference__
+
+
+The 9 original images varied in size from ~6000x6000 to ~
+
 U-Net model architecture
 ![U-Net](img/U-net.png)  
 [image source](https://arxiv.org/pdf/1505.04597.pdf)

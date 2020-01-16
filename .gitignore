@@ -2,6 +2,11 @@
 
 # ignore training image files
 early_development/data/
+early_development/img/
+early_development/ing_boxes/
+
+large_files.txt
+
 ref/
 .DS_Store
 data_science/

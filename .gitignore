@@ -33,6 +33,6 @@ ucsf_production/.ipynb_checkpoints
 
 # ignore bash files
 launch_gcp
-launch_gcp_beta
 stop_gcp
+create_gcp
 

@@ -1,18 +1,21 @@
-# ucsf ignore files
+#### 
+ucsf ignore files
+####
 
-# ignore training image files
+
+# ignore early_development files
 early_development/data/
 early_development/img/
 early_development/ing_boxes/
 
+# ignore misc files
 large_files.txt
-
 ref/
 .DS_Store
 data_science/
 .ipynb_checkpoints/
-
 troy_tutorial/.ipynb_checkpoints/
+
 
 # ignore in the ucsf development folder
 ucsf_development/img/
@@ -21,6 +24,15 @@ ucsf_development/.DS_Store
 ucsf_development/.ipynb_checkpoints
 ucsf_development/data
 ucsf_development/src/__pycache__/img_functions.cpython-37.pyc
-
 early_development/.ipynb_checkpoints
+
+
+# ignore in the ucsf_production folder
+ucsf_production/data
+ucsf_production/.ipynb_checkpoints
+
+# ignore bash files
+launch_gcp
+launch_gcp_beta
+stop_gcp
 
